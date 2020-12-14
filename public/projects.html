@@ -1,0 +1,166 @@
+<html lang="en">
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <title>my application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="home.js"></script>
+    <link rel="Stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <div id="forms">
+                <ul>
+                    <li> <a href="/signup">Sign Up</a></li>
+                    <li> <a href="/login">Login</a></li>
+                </ul>
+
+            </div>
+
+
+            <div id="pages">
+                <ul>
+                    <li> <a href="/home">Home</a></li>
+                    <li> <a href="/projects">Projects</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="projectwrapper">
+
+            <section id="viewcontentwrapper">
+                <div id="view">
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">view projects</button>
+
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="#complete">Complete </a>
+                            <a href="#incomplete">Incomplete </a>
+                            <a href="#all">All</a>
+                        </div>
+                    </div>
+
+                    <script>
+                        function myFunction() {
+                            document.getElementById("myDropdown").classList.toggle("show");
+                        }
+
+                        // Close the dropdown if the user clicks outside of it
+                        window.onclick = function (event) {
+                            if (!event.target.matches('.dropbtn')) {
+                                var dropdowns = document.getElementsByClassName("dropdown-content");
+                                var i;
+                                for (i = 0; i < dropdowns.length; i++) {
+                                    var openDropdown = dropdowns[i];
+                                    if (openDropdown.classList.contains('show')) {
+                                        openDropdown.classList.remove('show');
+                                    }
+                                }
+                            }
+                        }
+                    </script>
+                </div>
+
+                <div id="title">
+                    <h1>
+                        Start planning your projects
+                    </h1>
+
+                </div>
+            </section>
+
+            <section class="projectlistwrapper">
+
+                <div id="projectlist">
+
+
+                    <form role="form" action="/api/newproject" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="titleofproject" name="title"
+                                placeholder="Project title" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="module" name="module" placeholder="Module"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="progress" name="progress" placeholder="Progress"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="completiondate" name="Completiondate"
+                                placeholder="completion date" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="deadline" name="deadline" placeholder="Deadline"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="add project" class="btn btn-primary" id="addproject">
+                        </div>
+
+                    </form>
+
+                    <div>
+
+
+                    
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <section class="footerwrapper">
+
+            <div id="socialmedia">
+
+                <h3>
+                    Please follow us
+                </h3>
+
+                <ul>
+                    <li>
+                        <!-- Add font awesome icons -->
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                    </li>
+                </ul>
+            </div>
+            <div id="security">
+                <h4> Copyright© 2020 All Right Reserved </h4>
+                <h5><a href="#" </a> public policy</h5>
+            </div>
+
+        </section>
+    </footer>
+</body>
+
+</html>
